@@ -17,6 +17,7 @@ Outliers and shutdowns. describe() showed minimum values far below the normal ra
 We wanted to see what a normal sample looked like from the accepted batches, and then flag anything too far from it. We used an anomaly detection algorithm, instead of a classification algorithm. 
 
 Validation: leave one batch out
+
 We validate by leaving out whole batches, never single rows. Rows from the same batch are strongly correlated, so splitting rows would let the model recognise a run it has partly seen and make results look better than they are.
 The loop, used for every model:
 • Each accepted batch is left out once. A model is trained on the remaining accepted batches and scores the left-out one. This measures false alarms on unseen good batches.
